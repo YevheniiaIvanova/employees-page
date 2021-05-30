@@ -1,4 +1,4 @@
-import { getMonth, sortByLastName } from '../utils/utils';
+import { getMonth, sortByLastName } from '../../utils/utils';
 import BirthdaysListItem from './BirthdaysListItem';
 
 const BirthdaysList = ({ ...props }) => {

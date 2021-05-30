@@ -5,9 +5,10 @@ import { loadEmployees } from '../../actions/employess';
 import { getEmployees } from '../../selectors/employees';
 import { filterByLetter, sortByLastName } from '../../utils/utils';
 import { englishAlphabet } from '../../constants/alphabets';
+import './LettersAlphabet.css';
 
 import LetterAlphabet from './LetterAlphabet';
-import Employee from '../../Employee';
+import Employee from '../Employee';
 
 const LettersAlphabet = () => {
   const employees = useSelector(getEmployees);

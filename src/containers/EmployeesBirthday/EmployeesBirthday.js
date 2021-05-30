@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
-import { getActiveEmployees } from '../selectors/employees';
-import { dateConversion, sortMonths } from '../utils/utils';
+import { getActiveEmployees } from '../../selectors/employees';
+import { dateConversion, sortMonths } from '../../utils/utils';
 import BirthdaysList from './BirthdaysList';
-import { months } from '../constants/months.js';
+import { months } from '../../constants/months.js';
+import './EmployeesBirthday.css';
 
 const EmployeesBirthday = () => {
   const activeEmployees = useSelector(getActiveEmployees);

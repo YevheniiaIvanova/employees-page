@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { activeEmployee, notActiveEmployee } from '../actions/employess';
-import { getActiveEmployees } from '../selectors/employees';
+import { activeEmployee, notActiveEmployee } from '../../actions/employess';
+import { getActiveEmployees } from '../../selectors/employees';
+import './Employee.css';
 
 const Employee = ({ ...props }) => {
   const dispatch = useDispatch();
@@ -12,8 +13,6 @@ const Employee = ({ ...props }) => {
   const isActiveEmployee = activeEmployees.includes(employee);
 
   const onChangeStatusEmployee = (e) => {
-    // e.preventDefault();
-
     if (isActiveEmployee) {
       dispatch(notActiveEmployee(employee));
     } else {

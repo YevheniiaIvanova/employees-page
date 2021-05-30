@@ -1,0 +1,23 @@
+.employees-birthday {
+  width: 30%;
+}
+
+.birthdays-list {
+  margin-bottom: 25px;
+}
+
+.birthdays-list__title {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.birthdays-list__item {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.birthdays-list__item::before {
+  content: '🎂';
+  margin-right: 5px;
+}

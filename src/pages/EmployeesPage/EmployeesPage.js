@@ -1,5 +1,6 @@
-import Employees from '../../Employees';
-import EmployeesBirthday from '../../EmployeesBirthday';
+import Employees from '../../components/Employees';
+import EmployeesBirthday from '../../containers/EmployeesBirthday';
+import './EmployeesPage.css';
 
 const EmployeesPage = () => {
   return (
