@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { loadEmployees } from '../../actions/employess';
+import { loadEmployees, loadActiveEmployees } from '../../actions/employess';
 import { getEmployees } from '../../selectors/employees';
 import { filterByLetter, sortByLastName } from '../../utils/utils';
 import { englishAlphabet } from '../../constants/alphabets';
@@ -16,6 +16,7 @@ const LettersAlphabet = () => {
 
   useEffect(() => {
     dispatch(loadEmployees());
+    dispatch(loadActiveEmployees());
   }, []);
 
   return englishAlphabet.map((letter) => {

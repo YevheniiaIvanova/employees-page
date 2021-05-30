@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { activeEmployee, notActiveEmployee } from '../../actions/employess';
+import { addToActiveEmployees, removeFromActiveEmployees } from '../../actions/employess';
 import { getActiveEmployees } from '../../selectors/employees';
 import './Employee.css';
 
@@ -8,15 +8,16 @@ const Employee = ({ ...props }) => {
   const activeEmployees = useSelector(getActiveEmployees);
 
   const { employee } = props;
-  const { firstName, lastName } = employee;
+  const { firstName, lastName, id } = employee;
   const fullName = `${lastName} ${firstName}`;
-  const isActiveEmployee = activeEmployees.includes(employee);
+
+  const isActiveEmployee = activeEmployees.findIndex((employee) => employee.id === id) >= 0;
 
   const onChangeStatusEmployee = (e) => {
     if (isActiveEmployee) {
-      dispatch(notActiveEmployee(employee));
+      dispatch(removeFromActiveEmployees(employee));
     } else {
-      dispatch(activeEmployee(employee));
+      dispatch(addToActiveEmployees(employee));
     }
   };
 

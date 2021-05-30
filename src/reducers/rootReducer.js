@@ -1,4 +1,4 @@
-import { LOAD_EMPLOYEES, ACTIVE_EMPLOYEE, NOT_ACTIVE_EMPLOYEE } from '../constants/actionTypes';
+import { LOAD_EMPLOYEES, SET_ACTIVE_EMPLOYEES } from '../constants/actionTypes';
 
 const initialState = {
   employees: [],
@@ -13,17 +13,10 @@ const reducer = (state, action) => {
     };
   }
 
-  if (action.type === ACTIVE_EMPLOYEE) {
+  if (action.type === SET_ACTIVE_EMPLOYEES) {
     return {
       ...state,
-      activeEmployees: [...state.activeEmployees, action.payload],
-    };
-  }
-
-  if (action.type === NOT_ACTIVE_EMPLOYEE) {
-    return {
-      ...state,
-      activeEmployees: state.activeEmployees.filter((employee) => employee !== action.payload),
+      activeEmployees: action.payload,
     };
   }
 
